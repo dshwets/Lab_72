@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div id="form" class="form hidden">
+        <p><b>Текст:</b><br>
+            <textarea id = 'text_qoute'  name="text" cols="40" rows="3"></textarea></p>
+        </p>
+                <p><b>Автор:</b><br>
+            <input id = 'author' type="text" size="40">
+        </p>
+                <p><b>Email:</b><br>
+            <input id = 'email' type="text" size="40">
+        </p>
+        <p><input id ='send' type="submit" value="Отправить"></p>
+    </div>
+    <div id="qoutes"></div>
+{% endblock %}
+{% block scripts %}
+    <script type="application/javascript" src="{% static "js/main.js" %}"></script>
+{% endblock %}
