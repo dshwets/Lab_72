@@ -4,6 +4,7 @@ async function makeRequest(url, method='GET', data=undefined) {
 
     if (!csrfSafeMethod(method))
         opts.headers['X-CSRFToken'] = getCookie('csrftoken');
+        // opts.headers['sessionid'] = getCookie('sessionid');
 
     if (data) {
         opts.headers['Content-Type'] = 'application/json';
@@ -58,8 +59,16 @@ async function addQoute(event) {
 
 async function like_qoute(event) {
     event.preventDefault()
-    // let response = await makeRequest('http://localhost:8000/api/'+ id +'/like', 'GET')
-    console.log('111232321response')
+    console.log(event.target.id)
+    let data = await makeRequest('http://localhost:8000/api/quote/'+event.target.id + '/like', 'GET').then(response => response.json())
+    console.log(data)
+}
+
+async function dislike_qoute(event) {
+    event.preventDefault()
+    console.log(event.target)
+    let data = await makeRequest('http://localhost:8000/api/quote/'+event.target.id + '/dislike', 'GET').then(response => response.json())
+    console.log(data)
 }
 
 function show_form(event){
@@ -70,6 +79,9 @@ function show_form(event){
     qoutes.classList.add("hidden");
 
 }
+
+//localhost:8000/api/qoute/8/like
+//localhost:8000/api/quote/2/like
 
 async function get_qoute(event){
     event.preventDefault()
@@ -92,16 +104,16 @@ async function get_qoute(event){
         like.id = qoute['id']
         like.classList.add('like')
         div.appendChild(like)
-        like.addEventListener('load', function () {
-            console.log('12321464564645645')
-            like.preventDefault()
-            like.onclick = like_qoute()
-        })
+        like.addEventListener('click', like_qoute)
+
         let dislike = document.createElement("a")
         dislike.innerText = 'dislike'
         dislike.href = ''
+        dislike.id = qoute['id']
         dislike.classList.add('like')
         div.appendChild(dislike)
+        dislike.addEventListener('click', dislike_qoute)
+
         container = document.getElementById('qoutes')
         container.appendChild(div)
         container.classList.remove("hidden");

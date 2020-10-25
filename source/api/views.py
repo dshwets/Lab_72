@@ -24,11 +24,12 @@ class QuoteViewSet(ModelViewSet):
             return QuoteUpdateSerializer
         return QuoteSerializer
 
+
 class VoteApiView(APIView):
     def get(self, request, *args, **kwargs):
         qoute = get_object_or_404(Quote, pk=kwargs.get('pk'))
         try:
-            Vote.objects.get(session_key=self.request.session.session_key)
+            Vote.objects.get(session_key=self.request.session.session_key, quote_id=qoute)
             return Response({'message': 'you already voted it'}, status=200)
         except Vote.DoesNotExist:
             if self.request.path.split('/')[-1] == 'like':
