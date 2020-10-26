@@ -1,0 +1,200 @@
+[
+{
+  "model": "webapp.quote",
+  "pk": 1,
+  "fields": {
+    "text": "kekes",
+    "author": "lol",
+    "email": "dshwets@gmail.com",
+    "rating": -1,
+    "status": "new",
+    "created_at": "2020-10-22T19:12:50.959Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 2,
+  "fields": {
+    "text": "asdasdaasddss",
+    "author": "ddsdsdsdsds",
+    "email": "dshwets@gmail.com",
+    "rating": 2,
+    "status": "new",
+    "created_at": "2020-10-23T08:11:55.346Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 3,
+  "fields": {
+    "text": "i am so saaad",
+    "author": "kekes",
+    "email": "asdasdad@kekw.com",
+    "rating": 1,
+    "status": "new",
+    "created_at": "2020-10-23T17:18:59.081Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 4,
+  "fields": {
+    "text": "i am so saaad",
+    "author": "kekes",
+    "email": "asdasdad@kekw.com",
+    "rating": -1,
+    "status": "new",
+    "created_at": "2020-10-23T17:19:02.853Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 5,
+  "fields": {
+    "text": "some_text",
+    "author": "some_author",
+    "email": "email@mail.ru",
+    "rating": 1,
+    "status": "new",
+    "created_at": "2020-10-23T17:20:28.849Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 6,
+  "fields": {
+    "text": "i am so saaad",
+    "author": "kekes",
+    "email": "asdasdad@kekw.com",
+    "rating": 1,
+    "status": "new",
+    "created_at": "2020-10-23T17:21:00.367Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 7,
+  "fields": {
+    "text": "new_text",
+    "author": "some_new_new_author",
+    "email": "kekes@maillll.com",
+    "rating": -1,
+    "status": "new",
+    "created_at": "2020-10-23T17:21:21.444Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 8,
+  "fields": {
+    "text": "kekesessss",
+    "author": "asdasda",
+    "email": "asd@gmail.com",
+    "rating": 1,
+    "status": "new",
+    "created_at": "2020-10-23T17:22:30.612Z"
+  }
+},
+{
+  "model": "webapp.quote",
+  "pk": 9,
+  "fields": {
+    "text": "kekes",
+    "author": "asdasd",
+    "email": "dshwets@gmail.com",
+    "rating": 1,
+    "status": "new",
+    "created_at": "2020-10-25T16:22:50.082Z"
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 12,
+  "fields": {
+    "session_key": "4marfzvv91xy77btcc335evshdlqjva6",
+    "quote": 1,
+    "rating": -1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 13,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 2,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 14,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 9,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 15,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 6,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 16,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 8,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 17,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 1,
+    "rating": -1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 18,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 7,
+    "rating": -1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 19,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 3,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 20,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 5,
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.vote",
+  "pk": 21,
+  "fields": {
+    "session_key": "o0mkxnlw08ag6rbnvdrb3gz3idb67vrd",
+    "quote": 4,
+    "rating": -1
+  }
+}
+]
