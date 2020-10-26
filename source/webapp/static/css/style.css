@@ -233,3 +233,8 @@ input[type='submit']:hover {
     box-sizing: border-box;
     margin-left: 20px;
 }
+.ml-3{
+    box-sizing: border-box;
+    padding-left: 20px;
+
+}

@@ -66,7 +66,8 @@ async function like_qoute(event) {
 
 async function dislike_qoute(event) {
     event.preventDefault()
-    console.log(event.target)
+    // console.log(event.target)
+    // event.target.parentElement.getElementsByTagName('p')[2]
     let data = await makeRequest('http://localhost:8000/api/quote/'+event.target.id + '/dislike', 'GET').then(response => response.json())
     console.log(data)
 }
@@ -80,6 +81,16 @@ function show_form(event){
 
 }
 
+function show_one_qoute(event){
+    event.preventDefault()
+    qoutes = document.getElementsByClassName('qoute')
+    for (qoute of qoutes)
+    {
+        qoute.classList.add("hidden")
+    }
+    event.target.parentElement.classList.remove('hidden')
+}
+
 //localhost:8000/api/qoute/8/like
 //localhost:8000/api/quote/2/like
 
@@ -88,31 +99,37 @@ async function get_qoute(event){
     let data = await makeRequest('http://localhost:8000/api/quote/', 'GET').then(response => response.json())
     for (qoute of data) {
         let div = document.createElement('div');
-        div.className = 'qoute';
-        let p = document.createElement('p')
-        p.innerText = 'text' + ':' + qoute['text']
-        div.appendChild(p)
-        let p1 = document.createElement('p')
-        p1.innerText = 'created' + ':' + qoute['created_at']
-        div.appendChild(p1)
-        let p2 = document.createElement('p')
-        p2.innerText = 'Raiting' + ':' + qoute['rating']
-        div.appendChild(p2)
+            div.className = 'qoute';
+            let a = document.createElement('a')
+            a.innerText = 'text' + ':' + qoute['text']
+            a.href = ''
+            a.classList.add('like')
+            a.addEventListener('click', show_one_qoute )
+            div.appendChild(a)
+            let p1 = document.createElement('p')
+            p1.innerText = 'created' + ':' + qoute['created_at']
+            p1.classList.add('ml-3')
+            div.appendChild(p1)
+            let p2 = document.createElement('p')
+            p2.innerText = 'Raiting' + ':' + qoute['rating']
+            p2.classList.add('ml-3')
+            div.appendChild(p2)
+
         let like = document.createElement("a")
-        like.innerText = 'like'
-        like.href = ''
-        like.id = qoute['id']
-        like.classList.add('like')
-        div.appendChild(like)
-        like.addEventListener('click', like_qoute)
+            like.innerText = 'like'
+            like.href = ''
+            like.id = qoute['id']
+            like.classList.add('like')
+            div.appendChild(like)
+            like.addEventListener('click', like_qoute)
 
         let dislike = document.createElement("a")
-        dislike.innerText = 'dislike'
-        dislike.href = ''
-        dislike.id = qoute['id']
-        dislike.classList.add('like')
-        div.appendChild(dislike)
-        dislike.addEventListener('click', dislike_qoute)
+            dislike.innerText = 'dislike'
+            dislike.href = ''
+            dislike.id = qoute['id']
+            dislike.classList.add('like')
+            div.appendChild(dislike)
+            dislike.addEventListener('click', dislike_qoute)
 
         container = document.getElementById('qoutes')
         container.appendChild(div)
