@@ -59,17 +59,21 @@ async function addQoute(event) {
 
 async function like_qoute(event) {
     event.preventDefault()
-    console.log(event.target.id)
+    // console.log(event.target.id)
+    // console.log(event.target.parentElement.getElementsByTagName('p')[1])
+    // console.log(event.target.parentElement.getElementsByTagName('p')[1])
     let data = await makeRequest('http://localhost:8000/api/quote/'+event.target.id + '/like', 'GET').then(response => response.json())
     console.log(data)
+    qoute = await  makeRequest('http://localhost:8000/api/quote/'+event.target.id, 'GET').then(response => response.json())
+    event.target.parentElement.getElementsByTagName('p')[1].innerText = 'Raiting' + ':' + qoute['rating']
 }
 
 async function dislike_qoute(event) {
     event.preventDefault()
-    // console.log(event.target)
-    // event.target.parentElement.getElementsByTagName('p')[2]
     let data = await makeRequest('http://localhost:8000/api/quote/'+event.target.id + '/dislike', 'GET').then(response => response.json())
     console.log(data)
+    qoute = await  makeRequest('http://localhost:8000/api/quote/'+event.target.id, 'GET').then(response => response.json())
+    event.target.parentElement.getElementsByTagName('p')[1].innerText = 'Raiting' + ':' + qoute['rating']
 }
 
 function show_form(event){
